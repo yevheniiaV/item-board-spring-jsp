@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">Company Bio</h5>
-                <p class="grey-text text-lighten-4">We are a team of course students working on this project: Yevheniia Vorobei, Pohorelaia Anna, Dana Muzyka, Bazeliuk Volodimir, Kovalenko Serhii , Burliaiev Ivan</p>
+                <p class="grey-text text-lighten-4"></p>
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">SITEMAP</h5>
@@ -28,7 +28,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by students of <a class="orange-text text-lighten-3" href="https://mainacad.com">Main Academy</a>
+            Made by<a class="orange-text text-lighten-3" href="https://mainacad.com"></a>
         </div>
     </div>
 </footer>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MainController {
 
     @RequestMapping("/main.html")    
-    private String controlMain(HttpServletRequest req, HttpServletResponse resp) {
+    private String goToMainPage(HttpServletRequest req, HttpServletResponse resp) {
 
         return "main";
     }
