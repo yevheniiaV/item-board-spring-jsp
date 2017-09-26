@@ -33,9 +33,9 @@
 
 <div class="searchbox">
     <form action="search.html">
-        <div>
+        <div style=" width: 25%; float: left; translateY(20%); margin-left: 15px; margin-top: 10px; margin-bottom: 25px; background: white; height: 46px; border-radius: 4px;">
             <div>
-                <select name="categories">
+                <select style="height: 35px; text-decoration: none" name="categories">
                     <option value="all" selected = "selected">    All</option>
                     <option value="a">    Cars</option>
                     <option value="h">    Weapon</option>
@@ -44,11 +44,11 @@
             </div>
         </div>
 
-        <div>
-            <input align="center" id="icon_telephone" type="search" class="validate" placeholder="     Search..." name="searchword">
+        <div style=" width: 35%;  display: inline-block; transform: translateY(20%);  margin-left:30px; margin-top: 2px; margin-bottom: 24px; background: white; height: 46px; border-radius: 4px;">
+            <input align="center" id="icon_telephone" type="search" class="validate" placeholder="     Search..." style=" display: inline-block; text-indent: 25px" name="searchword">
         </div>
 
-        <div align="right">
+        <div align="right" style=" width: 33%; float: right; transform: translateY(20%); margin-left: 10px;  margin-right: 15px; margin-top: 6px; margin-bottom: 10px; height: 46px; border-radius: 4px;">
             <button class="btn waves-effect waves-light" type="submit" value="Search">Search
                 <i class="material-icons right">search</i>
             </button>

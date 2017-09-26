@@ -11,7 +11,6 @@ public class MainController {
 
     @RequestMapping("/main.html")    
     private String goToMainPage(HttpServletRequest req, HttpServletResponse resp) {
-
         return "main";
     }
 }

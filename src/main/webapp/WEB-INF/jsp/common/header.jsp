@@ -23,7 +23,7 @@
                     </c:when>
                     <c:otherwise>
                         <ul class="right hide-on-med-and-down">
-                            <li><a href="login.html">My Account</a></li>
+                            <li><a href="account.html">My Account</a></li>
                         </ul>
                     </c:otherwise>
                 </c:choose>
