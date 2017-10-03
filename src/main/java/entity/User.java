@@ -3,31 +3,48 @@ package entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "ib_users")
+@Table(name = "users")
 public class User implements Serializable {
 
     @Id
     private int id;
-    private Date date;
-    
-    private String login;
-    private String pass;
-    private String phone;
+
+    @Email
     private String email;
+
+    @NotNull
+    @NotBlank
+    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    private String name;
+
+    @NotNull
+    @NotBlank
+    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    private String pass;
+
+    @NotNull
+    @NotBlank
+    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    private String phone;
+
+    @NotNull
+    @NotBlank
+    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
     private String city;
 
     public User() {
     }
 
-    public User(int id, Date date, String login, String pass, String phone, String email, String city) {
-        this.id = id;
-        this.date = date;
-        this.login = login;
+    public User(String email, String name, String pass, String phone, String city) {
+        this.name = name;
         this.pass = pass;
         this.phone = phone;
         this.email = email;
@@ -50,21 +67,9 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
-    }
+    public String getName() {return name;}
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
+    public void setName(String name) {this.name = name;}
 
     public String getPass() {
         return pass;
@@ -94,8 +99,7 @@ public class User implements Serializable {
     public int hashCode() {
         int hash = 3;
         hash = 29 * hash + this.id;
-        hash = 29 * hash + Objects.hashCode(this.date);
-        hash = 29 * hash + Objects.hashCode(this.login);
+        hash = 29 * hash + Objects.hashCode(this.name);
         hash = 29 * hash + Objects.hashCode(this.pass);
         hash = 29 * hash + Objects.hashCode(this.phone);
         hash = 29 * hash + Objects.hashCode(this.email);
@@ -118,7 +122,7 @@ public class User implements Serializable {
         if (this.id != other.id) {
             return false;
         }
-        if (!Objects.equals(this.login, other.login)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         if (!Objects.equals(this.pass, other.pass)) {
@@ -133,15 +137,12 @@ public class User implements Serializable {
         if (!Objects.equals(this.city, other.city)) {
             return false;
         }
-        if (!Objects.equals(this.date, other.date)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", date=" + date + ", login=" + login + ", pass=" + pass + ", phone=" + phone + ", email=" + email + ", city=" + city + '}';
+        return "User{" + "id=" + id + ", name=" + name  + ", pass=" + pass + ", phone=" + phone + ", email=" + email + ", city=" + city + '}';
     }
 
 }
