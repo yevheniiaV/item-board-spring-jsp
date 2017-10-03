@@ -23,5 +23,7 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/main.html</url-pattern>
         <url-pattern>/account.html</url-pattern>
+        <url-pattern>/register.html</url-pattern>
+        <url-pattern>/logout.html</url-pattern>
     </servlet-mapping>
 </web-app>

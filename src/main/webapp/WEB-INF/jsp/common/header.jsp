@@ -11,7 +11,7 @@
                 <c:choose>
                     <c:when test="${not empty login}" >
                         <ul class="right hide-on-med-and-down">
-                            <li><a href="main.html?exit=true">Log Out</a></li>
+                            <li><a href="/logout.html">Log Out</a></li>
                         </ul>
                         <ul class="right hide-on-med-and-down">
                             <li><a href="change.html">My Profile</a></li>

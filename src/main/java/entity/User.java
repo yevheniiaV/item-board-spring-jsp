@@ -3,8 +3,8 @@ package entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -21,22 +21,23 @@ public class User implements Serializable {
     private String email;
 
     @NotNull
-    @NotBlank
     @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
     private String name;
 
     @NotNull
-    @NotBlank
     @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
     private String pass;
 
+    @Transient
     @NotNull
-    @NotBlank
+    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    private String pass2;
+
+    @NotNull
     @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
     private String phone;
 
     @NotNull
-    @NotBlank
     @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
     private String city;
 
@@ -77,6 +78,14 @@ public class User implements Serializable {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public String getPass2() {
+        return pass2;
+    }
+
+    public void setPass2(String pass2) {
+        this.pass2 = pass2;
     }
 
     public String getPhone() {

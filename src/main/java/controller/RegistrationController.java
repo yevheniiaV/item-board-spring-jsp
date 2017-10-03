@@ -32,15 +32,21 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String login(@Valid User user, BindingResult result, HttpSession session, HttpServletRequest request, HttpServletResponse response, Model model, String email, String name, String password, String password2, String phone, String city) throws IOException {
+    public String login(@Valid User user, BindingResult result, HttpSession session, HttpServletRequest request, HttpServletResponse response, Model model, String email, String name, String pass, String pass2, String phone, String city) throws IOException {
 
         if (result.hasErrors()){
-            return "account";
-        } else if ((userDAOService.getByLogin(name) == null) && (password.equals(password2)) && (!(name.equals("")) && !(email.equals("")) && !(password.equals("")) && !(password2.equals("")))) {
-            user = new User(email, name, password, phone, city);
+            if(!pass.equals(pass2)){
+                System.out.println(pass);
+                System.out.println(pass2);
+                model.addAttribute("passwordsNotEqualsError", "olol");
+                    return "account";
+                }else {
+                    return "account";}
+        }else if((userDAOService.getByLogin(name) == null) && (pass.equals(pass2)) && (!(name.equals("")) && !(email.equals("")) && !(pass.equals("")) && !(pass2.equals("")))) {
+            user = new User(email, name, pass, phone, city);
             registerUser(user, session, name);
             response.sendRedirect("/");
             return "main";
         } return null;
-}
+    }
 }

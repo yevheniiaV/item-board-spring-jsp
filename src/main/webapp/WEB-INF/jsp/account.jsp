@@ -107,13 +107,16 @@
                     </div>
                 </div>
 
-       <%--         <div class='row'style="width: 50%; float: right">
+                <div class='row'style="width: 50%; float: right">
                     <div class='input-field col s12' >
-                        <form:input class='validate' type='password' name='password2' id='passwordRepeat'  path="password2"/>
-                        <form:label path="password2">Repeat your password</form:label>
-                        <form:errors path="password2"/>
+                        <form:input class='validate' type='password' name='pass2' id='pass2'  path="pass2"/>
+                        <form:label path="pass2">Repeat your password</form:label>
+                        <form:errors path="pass2"/>
+                   <c:if test="${not empty passwordsNotEqualsError}">
+                       <form:errors> ${passwordsNotEqualsError} </form:errors>
+                   </c:if>
                     </div>
-                </div>--%>
+                </div>
 
                 <div class='row' style="width: 50%; float: left">
                     <div class='input-field col s12'>
