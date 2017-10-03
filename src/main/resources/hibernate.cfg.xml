@@ -5,9 +5,9 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://contac01.mysql.ukraine.com.ua:3306/contac01_prilosh</property>
-    <property name="hibernate.connection.username">contac01_prilosh</property>
-    <property name="hibernate.connection.password">4h57futz</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/item-board</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">adxpress</property>
     <property name="show_sql">true</property>
     <mapping class="entity.Item"/>
     <mapping class="entity.User"/>
