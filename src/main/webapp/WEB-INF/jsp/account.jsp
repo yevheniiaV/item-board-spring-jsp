@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -38,7 +40,7 @@
     <br>
     <br>
 
-    <div class="container" >
+ <%--   <div class="container" >
             <div class="z-depth-1 grey lighten-4 row" style="padding: 32px 48px 0px 48px; border: 1px solid #EEE; float: left; width: 30%;";>
 
                 <form class="col s12" method="post">
@@ -49,14 +51,14 @@
                     <h5 class="indigo-text" style="text-align: center">Login</h5>
                     <div class='row'>
                         <div class='input-field col s12'>
-                            <input class='validate' type='email' name='email' id='email' />
+                            <input class='validate' type='email' name='email1' id='email' />
                             <label for='email'>Enter your email</label>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class='input-field col s12'>
-                            <input class='validate' type='password' name='password' id='password' />
+                            <input class='validate' type='password' name='password1' id='password' />
                             <label for='password'>Enter your password</label>
                         </div>
                         <label style='float: right;'>
@@ -70,12 +72,12 @@
                         </div>
                 </form>
             </div>
-        </div>
+        </div>--%>
 
     <div class="container" >
         <div class="z-depth-1 grey lighten-4 row" style="padding: 32px 48px 0px 48px; border: 1px solid #EEE; float: right; width: 45%; ";>
 
-            <form class="col s12" method="post">
+            <form:form class="col s12" method="post" action="/register.html" commandName="user">
                 <div class='row' style="width: 100%">
                     <div class='col s12'>
                     </div>
@@ -83,43 +85,49 @@
 
                 <div class='row' style="width: 50%; float: left">
                     <div class='input-field col s12'>
-                        <input class='validate' type='email' name='email' id='emailRegister' />
-                        <label for='email'>Enter your email</label>
+                        <form:input class="validate" type="email" name="email" id="email" path="email"/>
+                        <form:label path="email">Enter your email</form:label>
+                        <form:errors path="email"/>
                     </div>
                 </div>
 
                 <div class='row'style="width: 50%; float: right">
                     <div class='input-field col s12' >
-                        <input class='validate' type='text' name='name' id='name' />
-                        <label for='password'>Enter your name</label>
+                        <form:input class='validate' type='text' name='name' id='name' path="name"/>
+                        <form:label  path="name">Enter your name</form:label>
+                        <form:errors path="name"/>
                     </div>
                 </div>
 
                 <div class='row' style="width: 50%; float: left">
                     <div class='input-field col s12'>
-                        <input class='validate' type='password' name='password' id='passwordRegister' />
-                        <label for='email'>Enter your password</label>
+                        <form:input class='validate' type='password' name='pass' id='pass'  path="pass"/>
+                        <form:label  path="pass">Enter your password</form:label>
+                        <form:errors path="pass"/>
                     </div>
                 </div>
 
-                <div class='row'style="width: 50%; float: right">
+       <%--         <div class='row'style="width: 50%; float: right">
                     <div class='input-field col s12' >
-                        <input class='validate' type='password' name='password' id='passwordRepeat' />
-                        <label for='password'>Repeat your password</label>
+                        <form:input class='validate' type='password' name='password2' id='passwordRepeat'  path="password2"/>
+                        <form:label path="password2">Repeat your password</form:label>
+                        <form:errors path="password2"/>
                     </div>
-                </div>
+                </div>--%>
 
                 <div class='row' style="width: 50%; float: left">
                     <div class='input-field col s12'>
-                        <input class='validate' type='tel' name='phone' id='phone' />
-                        <label for='email'>Enter your phone</label>
+                        <form:input class='validate' type='tel' name='phone' id='phone'  path="phone"/>
+                        <form:label  path="phone">Enter your phone</form:label>
+                        <form:errors path="phone"/>
                     </div>
                 </div>
 
                 <div class='row'style="width: 50%; float: right">
                     <div class='input-field col s12' >
-                        <input class='validate' type="text" name='city' id='city' />
-                        <label for='password'>Enter your city</label>
+                        <form:input class='validate' type="text" name='city' id='city'  path="city"/>
+                        <form:label path="city">Enter your city </form:label>
+                        <form:errors path="city"/>
                     </div>
                 </div>
 
@@ -130,7 +138,7 @@
                 </div>
                     </center>
                 </div>
-            </form>
+            </form:form>
         </div>
     </div>
 
