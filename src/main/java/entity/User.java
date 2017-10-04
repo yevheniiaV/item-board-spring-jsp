@@ -1,5 +1,7 @@
 package entity;
 
+import entity.FieldEqualsAnnotation.FieldEquals;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,6 +12,7 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
 
+@FieldEquals(field = "pass", equalsTo = "pass2")
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -18,23 +21,24 @@ public class User implements Serializable {
     private int id;
 
     @Email
+    @Size(min = 5, message = "Must be at least 5 characters!")
     private String email;
 
     @NotNull
-    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    @Size(min = 2, max = 24, message = "Must be at least 2 characters!")
     private String name;
 
     @NotNull
-    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    @Size(min = 6, message = "Must be at least 6 characters!")
     private String pass;
 
     @Transient
     @NotNull
-    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    @Size(min = 6, message = "Must be at least 6 characters!")
     private String pass2;
 
     @NotNull
-    @Size(min = 2, max = 14, message = "Must be at least 2 characters!")
+    @Size(min = 8, message = "Must be at least 8 characters!")
     private String phone;
 
     @NotNull

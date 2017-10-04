@@ -16,11 +16,11 @@ public class UserDAO {
         s.close();
     }
 
-    User getByLogin(String name){
+    User getByLogin(String email){
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session s = sf.openSession();
         s.beginTransaction();
-        Query q = s.createQuery("FROM User WHERE name='"+name+"'");
+        Query q = s.createQuery("FROM User WHERE email='"+email+"'");
         User out = (User)q.uniqueResult();
         s.close();
         return out;
