@@ -67,7 +67,7 @@
 
                     <br />
                         <div class='row' style="color: #26a69a">
-                            <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo' style="width: 200px; margin-left:10%; margin-right:10%;">Login</button>
+                            <button type='submit' name='btn_login1' class='col s12 btn btn-large waves-effect indigo' style="width: 200px; margin-left:10%; margin-right:10%;">Login</button>
                         </div>
                 </form>
             </div>
@@ -87,6 +87,9 @@
                         <form:input class="validate" type="email" name="email" id="email" path="email"/>
                         <form:label path="email">Enter your email</form:label>
                         <form:errors path="email"/>
+                        <c:if test="${not empty userExistError}">
+                            <c:out value="${userExistError}"/>
+                        </c:if>
                     </div>
                 </div>
 
@@ -111,9 +114,6 @@
                         <form:input class='validate' type='password' name='pass2' id='pass2'  path="pass2"/>
                         <form:label path="pass2">Repeat your password</form:label>
                         <form:errors path="pass2"/>
-                   <c:if test="${not empty passwordsNotEqualsError}">
-                       <form:errors> ${passwordsNotEqualsError} </form:errors>
-                   </c:if>
                     </div>
                 </div>
 
