@@ -16,8 +16,8 @@ public class UserDAOService {
         userDAO.add(user);
     }
 
-    public User getByLogin(String name){
-        User user = userDAO.getByLogin(name);
+    public User getByEmail(String email){
+        User user = userDAO.getByEmail(email);
         return user;
     }
 

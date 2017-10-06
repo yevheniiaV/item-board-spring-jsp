@@ -16,7 +16,7 @@ public class UserDAO {
         s.close();
     }
 
-    User getByLogin(String email){
+    User getByEmail(String email){
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session s = sf.openSession();
         s.beginTransaction();
