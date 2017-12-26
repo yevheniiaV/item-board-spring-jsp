@@ -6,11 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:if test="${not empty userExistError}" var="res" scope="request">
-    <title>Welcome to your account, </title>
+
+    <title>Login or Register to your Account</title>
+
     <%--meta link--%>
     <%@ include file="common/meta.jsp" %>
-</c:if>
+
 </head>
 
 <body>

@@ -26,6 +26,13 @@ public class LoginController {
         return new User();
     }
 
+    @RequestMapping(value = "/login.html")
+    public String goToLoginOrRegisterPage(HttpServletRequest req, Model model){
+        User user = new User();
+        model.addAttribute(user);
+        return "loginOrRegister";
+    }
+
     @RequestMapping(value = "/login.html", method = RequestMethod.POST)
     public String login(String emailLogin, String passwordLogin, HttpServletRequest request, HttpServletResponse response, Model model) throws IOException {
         UserDAOService userDAOService = new UserDAOService(new UserDAO());
