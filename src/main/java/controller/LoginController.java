@@ -29,7 +29,7 @@ public class LoginController {
     @RequestMapping(value = "/login.html", method = RequestMethod.POST)
     public String login(String emailLogin, String passwordLogin, HttpServletRequest request, HttpServletResponse response, Model model) throws IOException {
         UserDAOService userDAOService = new UserDAOService(new UserDAO());
-        User userResult = userDAOService.getByLogin(emailLogin);
+        User userResult = userDAOService.getByEmail(emailLogin);
         if (userResult != null && (!(emailLogin.equals("") &&(passwordLogin.equals("")))) && userResult.getPass().equals(passwordLogin)) {
             log.info("User "+ emailLogin + " was logged!");
             request.getSession().setAttribute("login", emailLogin);
